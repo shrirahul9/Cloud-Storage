@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Cloud Storage App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav">
+            <div class="nav-brand">☁ Shahid's Personal Cloud</div>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('profile') }}" class="active">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </nav>
+        
+        <div class="profile-section">
+            <h2>User Profile</h2>
+            
+            <div class="profile-info">
+                <div class="profile-field">
+                    <div class="field-label">Username:</div>
+                    <div class="field-value">{{ user.username }}</div>
+                </div>
+                
+                <div class="profile-field">
+                    <div class="field-label">Email:</div>
+                    <div class="field-value">{{ user.email }}</div>
+                </div>
+                
+                <div class="profile-field">
+                    <div class="field-label">Account Created:</div>
+                    <div class="field-value">{{ user.created_at }}</div>
+                </div>
+                
+                <div class="profile-field">
+                    <div class="field-label">Files Stored:</div>
+                    <div class="field-value">{{ file_count }}</div>
+                </div>
+            </div>
+            
+            <div class="profile-actions">
+                <a href="{{ url_for('index') }}" class="btn primary-btn">Back to Files</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
